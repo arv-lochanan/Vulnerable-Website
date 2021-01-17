@@ -1,0 +1,49 @@
+<html>
+<head>
+<script>  
+function verifyPassword() {  
+  var pw = document.getElementById("password").value;  
+  var cpw = document.getElementById("ConfPassword").value;
+  //check empty password field  
+  if(pw == "") {  
+     document.getElementById("message").innerHTML = "**Fill the password please!";  
+     return false;  
+  }   
+
+  //Confirm Password
+  if(pw!=cpw){
+    document.getElementById("message").innerHTML = "Passwords not matching"
+    return false;
+} 
+}
+
+</script>  
+  
+</head>
+<body>
+<form  method="post" action="register.php" onsubmit="return verifyPassword()">
+<h1 align="center"> <b>Registration form</b></h1>
+<br>
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" style="width:50%";>
+    <br>
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" id="InputEmail" name="email" placeholder="Enter your mailID" style="width:50%">
+    <br>
+    <br>
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" name="password" placeholder="Enter the password" style="width:50%">
+    <br>
+    <br>
+    <label for="password">Confirm Password</label>
+    <input type="password" class="form-control" id="ConfPassword" name="password" placeholder="Retype the password" style="width:50%">
+    <br>
+    <br>
+    <span id = "message" style="color:red"> </span> <br><br>  
+    <br>
+    <br>
+    <input type="submit" name="submit" class="form-control" id="submit"> 
+</form>
+
+</body>
+</html>
